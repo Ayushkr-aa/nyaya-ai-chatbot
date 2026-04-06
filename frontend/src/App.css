@@ -1,0 +1,17 @@
+/* Global App Styles */
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.main-content {
+  flex: 1;
+}
+.app-footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--primary-navy);
+  color: var(--text-grey);
+  font-size: 0.8rem;
+  border-top: 1px solid var(--glass-border);
+}

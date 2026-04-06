@@ -1,0 +1,35 @@
+# Python / Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Backend Specific
+backend/.env
+backend/chroma_db/
+backend/models/
+backend/training/
+backend/error_log.txt
+backend/gpu_check.txt
+backend/ingest_log.txt
+backend/*.txt
+
+# Frontend Specific
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+
+# IDE / System
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Large Files
+*.gguf
+*.zip
+*.tar.gz

@@ -1,0 +1,77 @@
+.site-header {
+  background: linear-gradient(135deg, var(--primary-navy) 0%, #000040 100%);
+  padding: 0;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  z-index: 100;
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 1.25rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.emblem-wrap {
+  flex-shrink: 0;
+}
+.emblem {
+  height: 64px;
+  filter: brightness(0) invert(1);
+  opacity: 0.95;
+}
+.header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.header-hi {
+  font-size: 0.75rem;
+  color: var(--text-grey);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+.header-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--primary-saffron);
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+.header-sub {
+  font-size: 0.8rem;
+  color: #cbd5e0;
+  font-weight: 400;
+}
+.header-badge {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(19, 136, 8, 0.15);
+  border: 1px solid rgba(19, 136, 8, 0.3);
+  color: #58d68d;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 20px;
+}
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #58d68d;
+  box-shadow: 0 0 8px #58d68d;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.saffron-line {
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--primary-saffron) 50%, transparent);
+  opacity: 0.8;
+}
