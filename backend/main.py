@@ -47,12 +47,12 @@ def root():
     return {"status": "DoJ Legal Assistant API running", "version": "2.0"}
 
 
-@app.get("/health")
+@app.get("/api/health")
 def health():
     return {"status": "ok", "rag": True, "llm": "gemini"}
 
 
-@app.post("/chat")
+@app.post("/api/chat")
 def chat(req: ChatRequest):
     session_id = req.session_id or str(uuid.uuid4())
 
@@ -79,7 +79,7 @@ def chat(req: ChatRequest):
     }
 
 
-@app.post("/chat/upload")
+@app.post("/api/chat/upload")
 async def chat_with_upload(
     file: UploadFile = File(...),
     session_id: str = "",
@@ -133,13 +133,13 @@ async def chat_with_upload(
     }
 
 
-@app.get("/captcha/generate")
+@app.get("/api/captcha/generate")
 def get_captcha():
     captcha_id, image_b64, _ = generate_captcha()
     return {"captcha_id": captcha_id, "image": image_b64}
 
 
-@app.post("/captcha/verify")
+@app.post("/api/captcha/verify")
 def verify(req: CaptchaVerifyRequest):
     result = verify_captcha(req.captcha_id, req.user_answer)
     return {"success": result}

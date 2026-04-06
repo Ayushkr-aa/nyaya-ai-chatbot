@@ -87,7 +87,7 @@ export default function ChatPage() {
     setLoading(true);
 
     try {
-      const res = await fetch(`${API}/chat`, {
+      const res = await fetch(`${API}/api/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -149,7 +149,7 @@ export default function ChatPage() {
       formData.append("session_id", sessionId);
       formData.append("language", language);
 
-      const res = await fetch(`${API}/chat/upload`, {
+      const res = await fetch(`${API}/api/chat/upload`, {
         method: "POST",
         body: formData,
       });

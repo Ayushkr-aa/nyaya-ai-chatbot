@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import "./CaptchaPage.css";
 
-const API = "http://localhost:8000";
+const API = import.meta.env.VITE_API_BASE_URL || "http://localhost:8000";
 
 export default function CaptchaPage({ onVerified }) {
   const [captchaId, setCaptchaId] = useState("");
@@ -16,7 +16,7 @@ export default function CaptchaPage({ onVerified }) {
     setAnswer("");
     setMessage("");
     try {
-      const res = await fetch(`${API}/captcha/generate`);
+      const res = await fetch(`${API}/api/captcha/generate`);
       const data = await res.json();
       setCaptchaId(data.captcha_id);
       setCaptchaImg(data.image);
@@ -36,7 +36,7 @@ export default function CaptchaPage({ onVerified }) {
     setStatus("loading");
     const timeTaken = (Date.now() - startTime.current) / 1000;
     try {
-      const res = await fetch(`${API}/captcha/verify`, {
+      const res = await fetch(`${API}/api/captcha/verify`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ captcha_id: captchaId, user_answer: answer, time_taken: timeTaken }),
