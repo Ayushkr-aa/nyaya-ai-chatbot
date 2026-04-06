@@ -15,7 +15,7 @@ backend/training/
 backend/error_log.txt
 backend/gpu_check.txt
 backend/ingest_log.txt
-backend/*.txt
+# (removed backend/*.txt wildcard — it was blocking requirements.txt)
 
 # Frontend Specific
 frontend/node_modules/
